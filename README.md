@@ -17,7 +17,9 @@ ShaderInspector
 ![](https://github.com/myacat/ShaderInspector/blob/master/Readme/InspectorPreview.png "材质面板的显示效果")
 
 只需要如下图所示在Shader Properties相应属性前面加上[Disable]就可以了：
+
 ![](https://github.com/myacat/ShaderInspector/blob/master/Readme/Usage.png "使用方法")
 
 仅仅只是禁止在面板上修改，使用在c#脚本里赋值是不受影响的：
+
 ![](https://github.com/myacat/ShaderInspector/blob/master/Readme/PreviewGif.gif )
