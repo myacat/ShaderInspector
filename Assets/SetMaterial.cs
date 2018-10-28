@@ -5,7 +5,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SetMaterial : MonoBehaviour 
 {
-	//public propertyName
 	public Texture 	_tex 		= null;
 	public Color 	_color 		= Color.white;
 	public float 	_float 		= 0;
