@@ -22,15 +22,15 @@ public class SetMaterial : MonoBehaviour
 	void Update () 
 	{
 		#if UNITY_EDITOR
-			mat.SetTexture("_MainTex1",_tex);
+			//mat.SetTexture("_MainTex1",_tex);
 			mat.SetTexture("_MainTex2",_tex);
-			mat.SetColor("_Color1" , _color);
+			//mat.SetColor("_Color1" , _color);
 			mat.SetColor("_Color2" , _color);
-			mat.SetFloat("_Float1" , _float);
+			//mat.SetFloat("_Float1" , _float);
 			mat.SetFloat("_Float2" , _float);
-			mat.SetFloat("_Range1" , _range);
+			//mat.SetFloat("_Range1" , _range);
 			mat.SetFloat("_Range2" , _range);
-			mat.SetVector("_VetorVal1" , _vectorVal);
+			//mat.SetVector("_VetorVal1" , _vectorVal);
 			mat.SetVector("_VetorVal2" , _vectorVal);
 		#endif	
 	}
