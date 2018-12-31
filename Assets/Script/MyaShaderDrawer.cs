@@ -48,15 +48,22 @@ namespace MyaShaderDrawer
         }
 
     }
+
+
+    /// <summary>
+    /// 1.在shader Property前面加上[VectorField(name1,name2,name3,name4,labelWidth)]标签可对Vector类型Property每个分量名称自定义；
+    /// 2.根据name的数量显示，如[VectorField(name1,name2,labelWidth)]则只会显示前面两个分量
+    /// 3.最后一个参数是分量名的宽度，0则会根据name的长度自动设置
+    /// </summary>
     internal class VectorFieldDrawer : MaterialPropertyDrawer
     {
         private readonly GUIContent[] labels;
 
         private float labelWidth = 13f;
         public VectorFieldDrawer(string x, float labelWidth) : this(labelWidth,new string[] { x }) { }
-        public VectorFieldDrawer(string x, string y, float labelWidth = 13f) : this(labelWidth,new string[] { x, y }) { }
-        public VectorFieldDrawer(string x, string y, string z, float labelWidth = 13f) : this(labelWidth,new string[] { x, y, z }) { }
-        public VectorFieldDrawer(string x, string y, string z, string w, float labelWidth = 13f) : this(labelWidth,new string[] { x, y, z, w }) { }
+        public VectorFieldDrawer(string x, string y, float labelWidth) : this(labelWidth,new string[] { x, y }) { }
+        public VectorFieldDrawer(string x, string y, string z, float labelWidth ) : this(labelWidth,new string[] { x, y, z }) { }
+        public VectorFieldDrawer(string x, string y, string z, string w, float labelWidth ) : this(labelWidth,new string[] { x, y, z, w }) { }
         public VectorFieldDrawer(float labelWidth , params string[] labels)
         {
             this.labels = new GUIContent[labels.Length];
@@ -93,7 +100,7 @@ namespace MyaShaderDrawer
                         if (labelWidth < 1)
                         {
                             char[] q = labels[i].text.ToCharArray();
-                            EditorGUIUtility.labelWidth = q.Length * 7.5f;
+                            EditorGUIUtility.labelWidth = q.Length * 7.5f + 10;
                         }
 
                         value[i] = EditorGUI.FloatField(nr, labels[i], value[i]);
